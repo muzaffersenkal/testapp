@@ -1,3 +1,3 @@
 requests
-protectremote
+protectremote==0.0.0.2
 gunicorn
