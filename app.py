@@ -8,14 +8,6 @@ set_token(TOKEN)
 
 @app.route('/')
 def public():
-    forwarded_header = request.headers.get("X-Forwarded-For")
-    print("forwarded_header",forwarded_header)
-    if forwarded_header:                                  
-        source_ip = request.headers.getlist("X-Forwarded-For")[0]
-        print("source_ip",source_ip)
-
-    ip = request.environ.get("HTTP_X_FORWARDED_FOR", request.remote_addr)
-    print("second",ip)
     return 'Hello'
 
 
