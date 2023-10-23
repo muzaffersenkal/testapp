@@ -1,5 +1,5 @@
 from flask import Flask, request
-from protectremote import pr_access, set_token, set_debug
+from protectremote import pr_access, set_token
 
 app = Flask(__name__)
 
