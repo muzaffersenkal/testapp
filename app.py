@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from protectremote import pr_access, set_token, set_debug
 
 app = Flask(__name__)
@@ -8,6 +8,11 @@ set_token(TOKEN)
 
 @app.route('/')
 def public():
+    forwarded_header = request.headers.get("X-Forwarded-For")
+    print("forwarded_header",forwarded_header)
+    if forwarded_header:                                  
+        source_ip = request.headers.getlist("X-Forwarded-For")[0]
+        print("source_ip",source_ip)
     return 'Hello'
 
 
