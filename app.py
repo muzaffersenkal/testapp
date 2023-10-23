@@ -13,6 +13,9 @@ def public():
     if forwarded_header:                                  
         source_ip = request.headers.getlist("X-Forwarded-For")[0]
         print("source_ip",source_ip)
+
+    ip = request.environ.get("HTTP_X_FORWARDED_FOR", request.remote_addr)
+    print("second",ip)
     return 'Hello'
 
 
