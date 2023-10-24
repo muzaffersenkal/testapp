@@ -1,5 +1,5 @@
 from flask import Flask, request
-from protectremote import pr_access, set_token
+from protectremote import pr_access, set_token, ProtechRemoteMiddleware
 
 app = Flask(__name__)
 
