@@ -14,7 +14,7 @@ def public():
 
 
 @app.route('/admin')
-@pr_access
+@pr_access()
 def secured():
     return 'secured'
 
